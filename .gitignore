@@ -27,6 +27,9 @@ umi_clicker-*.tar
 # this depending on your deployment strategy.
 /priv/static/
 
+/config/dev.exs
+
+/.elixir_ls/
 # Files matching config/*.secret.exs pattern contain sensitive
 # data and you should not commit them into version control.
 #
