@@ -9,10 +9,10 @@ config :umi_clicker, UmiClickerWeb.Endpoint,
 # Print only warnings and errors during test
 config :logger, level: :warn
 
-# Configure your database
-config :umi_clicker, UmiClicker.Repo,
-  username: "postgres",
-  password: "postgres",
-  database: "umi_clicker_test",
-  hostname: "localhost",
-  pool: Ecto.Adapters.SQL.Sandbox
+# # Configure your database
+# config :umi_clicker, UmiClicker.Repo,
+#   username: "postgres",
+#   password: "postgres",
+#   database: "umi_clicker_test",
+#   hostname: "localhost",
+#   pool: Ecto.Adapters.SQL.Sandbox

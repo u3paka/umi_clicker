@@ -7,8 +7,8 @@
 # General application configuration
 use Mix.Config
 
-config :umi_clicker,
-  ecto_repos: [UmiClicker.Repo]
+# config :umi_clicker,
+#   ecto_repos: [UmiClicker.Repo]
 
 # Configures the endpoint
 config :umi_clicker, UmiClickerWeb.Endpoint,

@@ -25,15 +25,15 @@ defmodule UmiClicker.DataCase do
     end
   end
 
-  setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(UmiClicker.Repo)
+  # setup tags do
+  #   :ok = Ecto.Adapters.SQL.Sandbox.checkout(UmiClicker.Repo)
 
-    unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(UmiClicker.Repo, {:shared, self()})
-    end
+  #   unless tags[:async] do
+  #     Ecto.Adapters.SQL.Sandbox.mode(UmiClicker.Repo, {:shared, self()})
+  #   end
 
-    :ok
-  end
+  #   :ok
+  # end
 
   @doc """
   A helper that transforms changeset errors into a map of messages.

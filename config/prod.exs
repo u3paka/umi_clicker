@@ -15,31 +15,23 @@ use Mix.Config
 # which you typically run after static files are built.
 config :umi_clicker, UmiClickerWeb.Endpoint,
   load_from_system_env: true,
-  url: [host: "${APP_NAME}.gigalixirapp.com", port: 80],
+  url: [host: System.get_env("APP_NAME") <> ".gigalixirapp.com", port: 80],
   cache_static_manifest: "priv/static/cache_manifest.json"
 
 config :umi_clicker, UmiClickerWeb.Endpoint,
   server: true,
-  secret_key_base: "${SECRET_KEY_BASE}"
+  secret_key_base: System.get_env("SECRET_KEY_BASE")
 
 # Do not print debug messages in production
 config :logger, level: :info
 
-config :umi_clicker, UmiClicker.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  # url: "${DATABASE_URL}",
-  url: System.get_env("DATABASE_URL"),
-  database: "",
-  ssl: true,
-  pool_size: 1
-
-config :libcluster,
-  topologies: [
-    k8s_example: [
-      strategy: Cluster.Strategy.Kubernetes,
-      config: [
-        kubernetes_selector: "${LIBCLUSTER_KUBERNETES_SELECTOR}",
-        kubernetes_node_basename: "${LIBCLUSTER_KUBERNETES_NODE_BASENAME}"]]]
+# config :umi_clicker, UmiClicker.Repo,
+#   adapter: Ecto.Adapters.Postgres,
+#   # url: "${DATABASE_URL}",
+#   url: System.get_env("DATABASE_URL"),
+#   database: "",
+#   ssl: true,
+#   pool_size: 1
 
 # ## SSL Support
 #
