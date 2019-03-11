@@ -4,7 +4,7 @@ defmodule UmiClickerWeb.Endpoint do
   socket "/socket", UmiClickerWeb.UserSocket,
     websocket: true,
     longpoll: false,
-    check_origin: ["https://umiumi.com", "//*.umiumi.com"]
+    check_origin: ["https://umiumi.net", "//*.umiumi.net", "//happybirthday2019.umiumi.net"]
 
   # Serve at "/" the static files from "priv/static" directory.
   #
