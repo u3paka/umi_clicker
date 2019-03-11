@@ -14,16 +14,16 @@ defmodule UmiClicker.DataCase do
 
   use ExUnit.CaseTemplate
 
-  using do
-    quote do
-      alias UmiClicker.Repo
+  # using do
+  #   quote do
+  #     alias UmiClicker.Repo
 
-      import Ecto
-      import Ecto.Changeset
-      import Ecto.Query
-      import UmiClicker.DataCase
-    end
-  end
+  #     import Ecto
+  #     import Ecto.Changeset
+  #     import Ecto.Query
+  #     import UmiClicker.DataCase
+  #   end
+  # end
 
   # setup tags do
   #   :ok = Ecto.Adapters.SQL.Sandbox.checkout(UmiClicker.Repo)
