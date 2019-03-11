@@ -12,7 +12,7 @@ use Mix.Config
 
 # Configures the endpoint
 config :umi_clicker, UmiClickerWeb.Endpoint,
-  url: [host: "localhost"],
+  url: [host: "127.0.0.1"],
   secret_key_base: "VGlt7vbto3ZXbsFRFsmnAs1aNjdKFB5TOEcY3LRmtsEsbdPTPg0jDuWvzv8JeyFG",
   render_errors: [view: UmiClickerWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: UmiClicker.PubSub, adapter: Phoenix.PubSub.PG2]
