@@ -54,7 +54,6 @@ defmodule KV.Comment do
       |> Enum.reduce([], fn {_username, comments}, acc ->
         acc ++ comments
       end)
-      |> IO.inspect()
       |> Enum.sort(&(Timex.compare(&1.time, &2.time) == -1))
       |> Enum.map(fn x ->
         {:ok, relative_str} = x.time |> Timex.format("{relative}", :relative)
@@ -71,7 +70,7 @@ defmodule KV.Comment do
           IO.puts("ID #{id} is Inserted again.")
 
           Map.update(acc, username, [make_comment(username, message, id, time)], fn x ->
-            [make_comment(username, message) | x]
+            [make_comment(username, message, id, time) | x]
           end)
 
         %{"username" => username, "message" => message, "time" => time}, acc ->
@@ -79,7 +78,7 @@ defmodule KV.Comment do
           IO.puts("ID #{id} is newly Inserted.")
 
           Map.update(acc, username, [make_comment(username, message, id, time)], fn x ->
-            [make_comment(username, message) | x]
+            [make_comment(username, message, id, time) | x]
           end)
       end)
     end)
