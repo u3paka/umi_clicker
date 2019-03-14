@@ -5,7 +5,7 @@ defmodule UmiClickerWeb.Router do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_flash
-    plug :protect_from_forgery
+    # plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
 
@@ -17,6 +17,8 @@ defmodule UmiClickerWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/datastore/dump", DataStoreController, :dump
+    post "/datastore/restore", DataStoreController, :restore
   end
 
   # Other scopes may use custom stacks.

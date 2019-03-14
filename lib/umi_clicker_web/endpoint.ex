@@ -44,5 +44,6 @@ defmodule UmiClickerWeb.Endpoint do
     key: "_umi_clicker_key",
     signing_salt: "BuxmSMR0"
 
+  plug CORSPlug
   plug UmiClickerWeb.Router
 end
