@@ -1,8 +1,16 @@
 defmodule UmiClickerWeb.RoomChannel do
   use Phoenix.Channel
 
-  def join("room:chat", _message, socket) do
-    {:ok, socket}
+  def join("room:chat", payload, socket) do
+
+    sum = KV.Fav.get_sum()
+    user_sum = KV.Fav.get(payload["user"])
+    fav = %{
+      :sum => sum,
+      :user => payload["user"],
+      :user_sum => user_sum
+    }
+    {:ok, %{:timeline => KV.Comment.all(), :fav => fav}, socket}
   end
 
   def handle_in("new_comment", %{"comment" => %{"username" => username, "message" => message} = comment}, socket) do
