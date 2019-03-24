@@ -1,5 +1,8 @@
 # UmiClicker
 
+海未ちゃん生誕祭2019の記念アプリケーション
+Vuejs x Phoenix(websocket)
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
